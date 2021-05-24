@@ -1,2 +1,2 @@
 # EMT
-Entity-Matching Transformer
+Entity-Matching Transformer with BERT
