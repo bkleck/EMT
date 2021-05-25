@@ -4,11 +4,11 @@
 
 
 ## Table of Contents 📝
-* [Introduction](#introduction) 
-* [Technology](#technology)
-* [Model Architecture](#model-architecture)
-* [Model Finetuning](#model-finetuning)
-* [Results](#results)
+* [Introduction](#Introduction) 
+* [Technology](#Technology)
+* [Model Architecture](#Model-Architecture)
+* [Model Finetuning](#Model-Finetuning)
+* [Results](#Results)
 
 
 ## Introduction 🔰
