@@ -40,11 +40,11 @@ I experimented with various methods and models, results will be shared below.
 
 **2) Model Pruning**  
   This is a compression technique to eliminate weights that contribute little to performance. It results in models being much smaller, but there might be a slight trade-off with accuracy.
-  ![image](https://user-images.githubusercontent.com/77097236/119450717-ea4a8c00-bd66-11eb-8334-95077a2c80ab.png)
+  ![image](https://user-images.githubusercontent.com/77097236/119450717-ea4a8c00-bd66-11eb-8334-95077a2c80ab.png)  
 
 Other methods that we are exploring include **Auto LR Finder, Auto Batch-size and Base Finetuning**.  
 These are the **_results_** from our experimentation:
-![image](https://user-images.githubusercontent.com/77097236/119451144-7eb4ee80-bd67-11eb-81d7-0bdeb492d3dd.png)  
+![image](https://user-images.githubusercontent.com/77097236/119451144-7eb4ee80-bd67-11eb-81d7-0bdeb492d3dd.png)    
 These were run on Tesla P100 GPU. Do note that a batch-size of 16 can only be done on Colab Pro with high-RAM. As seen, both methods utilized turned out well, but running more epochs do not improve accuracy due to over-fitting. Thus, I will be adding an **_early-stopping callback_** later.  
 
 ### Model Experimentation
