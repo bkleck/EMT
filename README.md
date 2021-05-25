@@ -4,8 +4,8 @@
 
 
 ## Table of Contents 📝
-* [Introduction](#Introduction) 
-* [Technology](#Technology)
+* [Introduction](#introduction) 
+* [Technology](#technology)
 * [Model Architecture](#Model-Architecture)
 * [Model Finetuning](#Model-Finetuning)
 * [Results](#Results)
