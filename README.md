@@ -1,5 +1,7 @@
 # EMT
 **Entity-Matching Transformer with BERT**  
+*Implemented with Lightning modules*  
+
 <img src='https://user-images.githubusercontent.com/77097236/119448365-d18ca700-bd63-11eb-8522-efa3766e2fff.png' width="500" height="250">
 
 
