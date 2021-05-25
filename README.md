@@ -11,16 +11,24 @@ Afterwards, the results will be passed to along the pipeline to other models to 
 
 
 ## Technology
-This was done on Google Colab, with the main libraries being pytorch-lightning and lightning-transformer.  
+This was done on Google Colab, with the main libraries being `pytorch-lightning` and `lightning-transformer`.  
 The `trainer` notebook is implemented on vanilla Pytorch, while the `lightning_trainer` notebook is implemented with lightning modules.  
 These modules define pre-made tasks that can easily be configured and contain various functions to help accelerate and improve training.  
 
 ## Model Architecture
+I made use of the **_AutoModel_** and **_AutoTokenizer_** from HuggingFace backbone to easily switch between different transformer architectures without the need to change the tokenization manually.
+
 With the need to implement 2 separate sentences into the BERT embeddings, I created custom tokens, with reference to this paper:
 https://openproceedings.org/2020/conf/edbt/paper_205.pdf
 - Conventional tokens for BERT: **[CLS] + text + [SEP]**
 - Custom entity tokens: **[CLS] + A + [SEP] + B + [SEP]**  
 ![image](https://user-images.githubusercontent.com/77097236/119447935-3562a000-bd63-11eb-987b-c9ea735e96f0.png)
+
+Thus, for our data pre-processing, the data is split into samples in the following form: **['prior sentence' , 'current sentence']**.  
+This was after experimentation between 1,2 and 3 prior sentences, where 1 prior sentence gave the best result.  
+The labels for the data are **_is_entity_** and **_not_entity_**.
+
+For detailed explanation on Lightning's `DataModule`, `TextClassificationTransformer` and `Trainer`, please refer to notebook, or Pytorch Lightning's [official documentation](https://pytorch-lightning.readthedocs.io/en/latest/).
 
 ## Model Finetuning
 I experimented with various methods and models, results will be shared below.
@@ -42,6 +50,15 @@ These were run on Tesla P100 GPU. Do note that a batch-size of 16 can only be do
 ### Model Experimentation
 I also tried out various pre-trained transformers available on [HuggingFace](https://huggingface.co/transformers/pretrained_models.html).  
 The **_results_** are shown below:  
-![image](https://user-images.githubusercontent.com/77097236/119454241-e9b3f480-bd6a-11eb-8e84-89fe525032be.png)
+![image](https://user-images.githubusercontent.com/77097236/119455808-8b881100-bd6c-11eb-981e-8aa95ded542c.png)
 
+With more epochs together with early-stopping, I was able to push up the test F1 score. For the last 3 models, I utilized a Tesla V100 to speed up run-time significantly due to large model sizes.
+
+## Results
+After experimentation, we introduced a larger dataset into our final BERT model:
+- **Callbacks: early-stopping, SWA, pruning**
+- **9 epochs, 9min 55s**
+- **Validation accuracy: 85.1%**
+
+The `lightning-transformer` module was able to significantly reduce training speed, from **_34min 12s_** to **_9min 55s_**.
 
