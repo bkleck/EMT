@@ -6,9 +6,9 @@
 ## Table of Contents 📝
 * [Introduction](#Introduction-) 
 * [Technology](#Technology-)
-* [Model Architecture](##model-architecture-)
-* [Model Finetuning](##model-finetuning-)
-* [Results](##results-)
+* [Model Architecture](#model-architecture-)
+* [Model Finetuning](#model-finetuning-)
+* [Results](#results-)
 
 
 ## Introduction 🔰
