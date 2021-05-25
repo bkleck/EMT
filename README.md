@@ -4,6 +4,9 @@
 
 
 ## Table of Contents
+[Introduction](#introduction) 
+[Technology](#technology)
+
 
 ## Introduction
 With the vast sources of articles for start-ups available online, much of the sentences do not refer to the entity/company we are interested in. Thus, this model aims to **_match sentences to the main entity_** we are interested in using a custom BERT architecture.   
