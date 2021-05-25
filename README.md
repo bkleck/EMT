@@ -4,8 +4,8 @@
 
 
 ## Table of Contents 📝
-* [Introduction](https://github.com/bkleck/EMT##Introduction) 
-* [Technology](##Technology)
+* [Introduction](#Introduction-) 
+* [Technology](#Technology-)
 * [Model Architecture](##model-architecture)
 * [Model Finetuning](##model-finetuning)
 * [Results](##results)
