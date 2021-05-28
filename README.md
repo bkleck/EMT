@@ -11,7 +11,8 @@
 * [Model Architecture](#model-architecture-)
 * [Model Finetuning](#model-finetuning-)
 * [Results](#results-)
-
+* [How to Use](#how-to-use-)
+* [File Descriptions](#file-descriptions-)
 
 ## Introduction 🔰
 With the vast sources of articles for start-ups available online, much of the sentences do not refer to the entity/company we are interested in. Thus, this model aims to **_match sentences to the main entity_** we are interested in using a custom BERT architecture.   
@@ -75,7 +76,24 @@ After experimentation, we introduced a larger dataset into our final BERT model:
 - **Validation accuracy: 85.1%**
 
 The `lightning-transformer` module was able to significantly reduce training speed, from **_34min 12s_** to **_9min 55s_**.
+<br/>
+<br/>
 
-## How to Use
+## How to Use 👷‍♂️
 The steps above described the training procedure that I went through. If you just need to run the model for inference, please run the python files within the **_predict folder_**.  
 The BERT model was trained on news articles for financial companies, with rows at sentence level, hence data input has to be similar. 
+
+1) Input the news data into the **_data folder_**, with the name **_news_tagged.csv_**. Emphasize that articles should be at sentence level.
+2) Command prompt into the **_predict folder_**, and create the virtual environment with `python -m venv venv/`. Afterwards, activate the virtual environment with `{directory}\venv\Scripts\activate`.
+3) If it is your first time, install python libraries using `pip install -r requirements.txt`.
+4) Run the **_run_prediction.py_** file using `python prediction.py`. Ensure that **_GPU is utilized_** with CUDA in Pytorch for faster runtime.
+5) Predictions will be saved into **_predictions.csv_** in the **_data folder_**.
+
+Sample run-time: 31mins for 3819 sentence comparisons, run on GeForce RTX 2070, 8GB RAM.
+<br/>
+<br/>
+
+## File Descriptions 💾
+- In the main folder, the files are utilized for training of our model. `utils.py` supports `trainer.ipynb`, deploying the model on vanilla Pytorch. The `lightning_trainer.ipynb` sees our model deployed on the lightning platforms for acceleration.
+- In the main folder, the notebooks `pipeline_inference.ipynb` and `trainer_inference.ipynb` show the codes needed to run predictions, either using HuggingFace [PipeLine](https://huggingface.co/transformers/main_classes/pipelines.html#transformers.TextClassificationPipeline) or Pytorch Lightning [Trainer](https://pytorch-lightning.readthedocs.io/en/stable/common/trainer.html).
+- In the predict folder, `utils_py` supports the main file for predicting, which is `run_prediction.py`.
