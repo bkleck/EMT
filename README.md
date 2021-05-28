@@ -20,7 +20,7 @@ Afterwards, the results will be passed to along the pipeline to other models to 
 
 ## Technology ⚡
 This was done on Google Colab, with the main libraries being `pytorch-lightning` and `lightning-transformer`.  
-The **_trainer notebook_** is implemented on vanilla Pytorch, while the **_lightning_trainer_** notebook is implemented with lightning modules.  
+The **_trainer notebook_** is implemented on vanilla Pytorch, while the **_lightning_trainer notebook_** is implemented with lightning modules.  
 These modules define pre-made tasks that can easily be configured and contain various functions to help accelerate and improve training.  
 <br/>
 <br/>
