@@ -11,7 +11,7 @@
 * [Model Architecture](#model-architecture-)
 * [Model Finetuning](#model-finetuning-)
 * [Results](#results-)
-* [How to Use](#how-to-use-)
+* [How to Use](#how-to-use-%EF%B8%8F)
 * [File Descriptions](#file-descriptions-)
 
 ## Introduction 🔰
