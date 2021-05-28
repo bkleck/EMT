@@ -76,3 +76,6 @@ After experimentation, we introduced a larger dataset into our final BERT model:
 
 The `lightning-transformer` module was able to significantly reduce training speed, from **_34min 12s_** to **_9min 55s_**.
 
+## How to Use
+The steps above described the training procedure that I went through. If you just need to run the model for inference, please run the python files within the **_predict folder_**.  
+The BERT model was trained on news articles for financial companies, with rows at sentence level, hence data input has to be similar. 
