@@ -89,7 +89,7 @@ The BERT model was trained on news articles for financial companies, with rows a
 4) Run the **_run_prediction.py_** file using `python prediction.py`. Ensure that **_GPU is utilized_** with CUDA in Pytorch for faster runtime.
 5) Predictions will be saved into **_predictions.csv_** in the **_data folder_**.
 
-Sample run-time: 31mins for 3819 sentence comparisons, run on GeForce RTX 2070, 8GB RAM.
+Sample run-time: 12min 44s for 3819 sentence comparisons, run on GeForce RTX 2070, 8GB RAM.
 <br/>
 <br/>
 
